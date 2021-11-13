@@ -1,10 +1,5 @@
 //Cloned to use
 //You can edit ALL of the code here
-// function setup() {
-//   const allEpisodes = getAllEpisodes();
-//   makePageForEpisodes(allEpisodes);
-// }
-//You can edit ALL of the code here
 const search = document.getElementById("search");
 let results = document.getElementById("results");
 const selected = document.getElementById("selected");
@@ -41,6 +36,7 @@ function onloadShow() {
     }
   });
 }
+
 //Call page on load function
 onloadShow();
 selectShow.addEventListener("change", (show) => {
@@ -77,6 +73,8 @@ selectShow.addEventListener("change", (show) => {
      `;
               }
             });
+          //load shows alphabetically
+          allShows.sort((a, b) => a.name.localeCompare(b.name));
 
           //Searching message selected
           const selectSearch = episodes.filter(
@@ -140,7 +138,7 @@ selectShow.addEventListener("change", (show) => {
   }
 });
 
-// fetchShowsApi();
+fetchShowsApi();
 
 // const fetchEpisodes = async () => {
 //   episodes = await fetch(
